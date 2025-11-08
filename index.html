@@ -55,6 +55,8 @@
       </div>
     </div>
   </nav>
+
+
   <section class="space-y-3 md:space-y-0 flex flex-col md:flex-row h-full justify-evenly text-center bg-[#CFF0DC]">
     <img class="flex justify-center items-center md:hidden" src="./assets/hero-leaf1.png" alt="">
     <div><img class="w-0 md:w-full" src="./assets/hero-leaf1.png" alt=""></div>
@@ -69,22 +71,28 @@
   <!-- Card Section -->
   <section class="bg-green-50">
     <h1 class="text-2xl font-semibold text-[#1F2937] text-center mt-15 mb-8">Choose Your Trees</h1>
-    <div class="flex justify-center mx-15 gap-10 h-max">
-      <div>
+    <div class="flex flex-col md:flex-row justify-center mx-15 gap-10 h-max">
+      <div class="flex flex-col items-center text-center justify-center md:block md:text-left md:justify-start md:items-start">
         <h1 class="text-lg font-bold mb-2">Categories</h1>
         <div id="showAll" onclick="showAll(); addtoallbtn()"
-          class="text-[#1F2937] hover:bg-[#15803D] hover:text-white rounded-lg p-1 hover:cursor-pointer">All Trees</div>
+          class="text-[#1F2937] hover:bg-[#15803D] hover:text-white w-max pr-5 rounded-lg p-1 hover:cursor-pointer">All Trees</div>
         <div id="Categorie" class="space-y-1 w-[120px]">
 
         </div>
       </div>
+      <section id="spinner" class="flex  w-[800px] justify-center items-center py-5 hidden">
+        <span class="loading loading-dots loading-xl"></span>
+      </section>
       <!-- all plants here -->
-      <div class="grid grid-cols-3 gap-5 max-w-[1000px] mx-auto" id="plantSector">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1000px] mx-auto" id="plantSector">
 
       </div>
-      <div class="w-[150px] bg-white rounded-lg">
-        <h1 class="text-lg font-bold p-2">Your Cart</h1>
-      </div>
+      <div class="bg-white rounded-lg flex items-center flex-col justify-between"><div class="w-[150px] ">
+        <h1 class="text-lg text-center font-bold p-2">Your Cart</h1>
+        <h1 id="cart-container">
+        </h1>
+        <h2 class="font-bold text-center mt-3">Total: <span id="cart-total">0</span> ৳</h2>
+      </div></div>
     </div>
   </section>
   <!-- Campaign Section -->
@@ -93,7 +101,7 @@
     <div class="flex flex-col md:flex-row justify-center items-center gap-8">
       <div><img class="w-90 rounded-lg shadow-md" src="./assets/about.png" alt=""></div>
       <div>
-        <div class="text-[#1F293780] w-full md:w-132 ">Green Earth is a global tree plantation initiative dedicated to
+        <div class="text-[#1F293780] text-wrap md:w-132 ">Green Earth is a global tree plantation initiative dedicated to
           fighting climate change. Since our start,
           we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats
           for wildlife, and combat global warming.</div>
@@ -108,22 +116,22 @@
   </section>
 
   <!-- Open the modal using ID.showModal() method -->
-<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
-<dialog id="my_modal_1" class="modal">
-  <div class="modal-box">
-    <!-- <h3 class="text-lg font-bold">Hello!</h3> -->
-    <!-- <p class="py-4">Press ESC key or click the button below to close</p> -->
-     <div id="modelHold" class="rounded-lg space-y-2">
-     
-     </div>
-    <div class="modal-action">
-      <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
-      </form>
+  <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+  <dialog id="my_modal_1" class="modal">
+    <div class="modal-box">
+      <!-- <h3 class="text-lg font-bold">Hello!</h3> -->
+      <!-- <p class="py-4">Press ESC key or click the button below to close</p> -->
+      <div id="modelHold" class="rounded-lg space-y-2">
+
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn">Close</button>
+        </form>
+      </div>
     </div>
-  </div>
-</dialog>
+  </dialog>
 
   <section class="bg-[#CFF0DC] py-15">
     <h1 class="text-lg text-[#1F2937] font-semibold text-center mb-7">Our Impact</h1>
